@@ -6,5 +6,12 @@
 */
 {
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./projects/med-registry/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/med-registry/tsconfig.spec.json"
+    }
+]
 }
