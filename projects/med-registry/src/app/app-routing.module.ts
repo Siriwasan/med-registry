@@ -40,7 +40,7 @@ const routes: Routes = [
       // { path: 'about', component: AboutComponent },
       // { path: 'auth', component: AuthComponent },
       // { path: 'page-not-autherized', component: PageNotAutherizedComponent },
-      { path: '', redirectTo: '/or-schedule', pathMatch: 'full' },
+      { path: '', redirectTo: 'or-schedule', pathMatch: 'full' },
     ],
   },
 ];

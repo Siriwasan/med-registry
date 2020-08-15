@@ -1,0 +1,8 @@
+<form [formGroup]="fg">
+  Value: {{ fg.value | json }}
+  <hr>
+  <input placeholder="First name" formControlName="firstName">
+  <input placeholder="Last name" formControlName="lastName">
+  <!-- <input placeholder="email" formControlName="email">
+  <input placeholder="phone" formControlName="phone"> -->
+</form>
