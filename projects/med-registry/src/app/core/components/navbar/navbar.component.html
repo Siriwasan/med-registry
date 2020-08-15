@@ -7,7 +7,7 @@
     <img src="assets/images/avatar.jpg" alt="Siriwasan A." />
   </div>
 
-  <a mat-list-item>
+  <!-- <a mat-list-item>
     <mat-slide-toggle [checked]="(theme$ | async) === 'dark'" (change)="toggleDarkTheme($event.checked)">Dark theme
     </mat-slide-toggle>
   </a>
@@ -20,13 +20,13 @@
   <a mat-list-item routerLink="/login" routerLinkActive="active" (click)="onNavItemSelected()">
     <mat-icon>mood</mat-icon>
     <span class="nav-caption">Login</span>
-  </a>
+  </a> -->
 
   <mat-divider></mat-divider>
 
   <h2 mat-subheader>OR Schedule</h2>
 
-  <a mat-list-item routerLink="/registry/test-form3" routerLinkActive="active" (click)="onNavItemSelected()">
+  <a mat-list-item routerLink="/or-schedule" routerLinkActive="active" (click)="onNavItemSelected()">
     <mat-icon>list</mat-icon>
     <span class="nav-caption">Congential Heart Project</span>
   </a>

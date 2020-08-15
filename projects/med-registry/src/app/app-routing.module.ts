@@ -23,6 +23,13 @@ const routes: Routes = [
         loadChildren: () =>
           import('./features/home/home.module').then((m) => m.HomeModule),
       },
+      {
+        path: 'or-schedule',
+        loadChildren: () =>
+          import('./features/or-schedule/or-schedule.module').then(
+            (m) => m.OrScheduleModule
+          ),
+      },
       // {
       //   path: 'registry',
       //   loadChildren: () => import('./features/registry/registry.module').then((m) => m.RegistryModule),
@@ -33,7 +40,7 @@ const routes: Routes = [
       // { path: 'about', component: AboutComponent },
       // { path: 'auth', component: AuthComponent },
       // { path: 'page-not-autherized', component: PageNotAutherizedComponent },
-      { path: '', redirectTo: '/home', pathMatch: 'full' },
+      { path: '', redirectTo: '/or-schedule', pathMatch: 'full' },
     ],
   },
 ];
