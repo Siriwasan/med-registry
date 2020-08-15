@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,8 +29,8 @@ import { OverlayContainer } from '@angular/cdk/overlay';
       maxAge: 25,
       logOnly: environment.production,
     }),
-    // AngularFireModule.initializeApp(environment.firebase),
-    // AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     AppStoreModule,
     NgxUiLoaderModule,
   ],

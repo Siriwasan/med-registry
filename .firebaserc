@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "med-registry"
+  },
+  "targets": {
+    "med-registry": {
+      "hosting": {
+        "med-registry": [
+          "med-registry"
+        ]
+      }
+    }
   }
 }
