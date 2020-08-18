@@ -42,7 +42,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 // import { MatTreeModule } from '@angular/material/tree';
 
-// import { MatDatepickerModule, MatMomentDateModule } from './modules/mat-datepicker';
+import {
+  MatDatepickerModule,
+  MatMomentDateModule,
+} from 'dist/med-registry-library';
 // import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
 @NgModule({
@@ -63,8 +66,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     // MatCheckboxModule,
     MatChipsModule,
     // MatStepperModule,
-    // MatDatepickerModule,
-    // MatMomentDateModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
     MatDialogModule,
     // MatDividerModule,
     // MatExpansionModule,

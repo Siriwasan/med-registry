@@ -5,6 +5,8 @@ import { SharedModule } from '../../../shared/shared.module';
 
 import { OrScheduleDetailComponent } from './or-schedule-detail.component';
 
+import { MedRegistryLibraryModule } from 'dist/med-registry-library';
+
 const routes: Routes = [
   {
     path: '',
@@ -14,6 +16,10 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [OrScheduleDetailComponent],
-  imports: [SharedModule, RouterModule.forChild(routes)],
+  imports: [
+    SharedModule,
+    RouterModule.forChild(routes),
+    MedRegistryLibraryModule,
+  ],
 })
 export class OrScheduleDetailModule {}

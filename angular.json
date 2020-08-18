@@ -29,6 +29,7 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/med-registry-library/src/lib/mat-datepicker/prebuilt-themes/indigo-pink.scss",
               "projects/med-registry/src/styles.scss"
             ],
             "scripts": [],
@@ -37,7 +38,8 @@
               "firebase/app",
               "@firebase/firestore",
               "@firebase/component",
-              "@firebase/util"
+              "@firebase/util",
+              "moment-timezone"
             ]
           },
           "configurations": {
@@ -132,6 +134,44 @@
         "deploy": {
           "builder": "@angular/fire:deploy",
           "options": {}
+        }
+      }
+    },
+    "med-registry-library": {
+      "projectType": "library",
+      "root": "projects/med-registry-library",
+      "sourceRoot": "projects/med-registry-library/src",
+      "prefix": "mrl",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/med-registry-library/tsconfig.lib.json",
+            "project": "projects/med-registry-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/med-registry-library/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/med-registry-library/src/test.ts",
+            "tsConfig": "projects/med-registry-library/tsconfig.spec.json",
+            "karmaConfig": "projects/med-registry-library/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/med-registry-library/tsconfig.lib.json",
+              "projects/med-registry-library/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
         }
       }
     }

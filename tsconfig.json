@@ -12,6 +12,12 @@
     },
     {
       "path": "./projects/med-registry/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/med-registry-library/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/med-registry-library/tsconfig.spec.json"
     }
 ]
 }
