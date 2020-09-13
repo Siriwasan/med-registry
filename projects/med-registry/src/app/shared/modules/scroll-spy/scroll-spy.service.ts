@@ -1,7 +1,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { fromEvent, Subject, Observable, Subscription } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
-import { animationFrame } from 'rxjs/internal/scheduler/animationFrame';
+import { animationFrameScheduler } from 'rxjs';
 
 const TOP_OFFSET = 64; // estimate number
 
@@ -28,15 +28,20 @@ export class ScrollSpyService implements OnDestroy {
     this.scrollSubscription.unsubscribe();
   }
 
-  public setScrollTarget(container: Element) {
+  public setScrollTarget(container: Element): void {
     this.scrollTarget = container;
   }
 
-  public getCurrentSection$(scrollSpyId: string = this.defaultId): Observable<string> {
+  public getCurrentSection$(
+    scrollSpyId: string = this.defaultId
+  ): Observable<string> {
     return this.scrollSpies[scrollSpyId].subject.asObservable();
   }
 
-  public addElement(element: HTMLElement, scrollSpyId: string = this.defaultId): void {
+  public addElement(
+    element: HTMLElement,
+    scrollSpyId: string = this.defaultId
+  ): void {
     if (!this.scrollSpies[scrollSpyId]) {
       this.scrollSpies[scrollSpyId] = {
         elements: [],
@@ -58,10 +63,13 @@ export class ScrollSpyService implements OnDestroy {
     this.scrollSpies[scrollSpyId].elements = elements;
   }
 
-  public removeElement(element: HTMLElement, scrollSpyId: string = this.defaultId): void {
-    const elements: HTMLElement[] = this.scrollSpies[scrollSpyId].elements.filter(
-      (el: HTMLElement): boolean => el.id !== element.id
-    );
+  public removeElement(
+    element: HTMLElement,
+    scrollSpyId: string = this.defaultId
+  ): void {
+    const elements: HTMLElement[] = this.scrollSpies[
+      scrollSpyId
+    ].elements.filter((el: HTMLElement): boolean => el.id !== element.id);
 
     if (!elements.length) {
       delete this.scrollSpies[scrollSpyId];
@@ -79,12 +87,13 @@ export class ScrollSpyService implements OnDestroy {
 
   public subscribeScroll(): void {
     this.scrollSubscription = fromEvent(this.scrollTarget, 'scroll')
-      .pipe(throttleTime(0, animationFrame))
+      .pipe(throttleTime(0, animationFrameScheduler))
       .subscribe((): void => {
         Object.keys(this.scrollSpies).forEach((key: string): void => {
           const { currentSectionId, elements, subject } = this.scrollSpies[key];
           const topElementInView: HTMLElement = elements.filter(
-            (element: HTMLElement): boolean => element.getBoundingClientRect().top <= TOP_OFFSET + 1
+            (element: HTMLElement): boolean =>
+              element.getBoundingClientRect().top <= TOP_OFFSET + 1
           )[0];
 
           if (!topElementInView) {
@@ -109,7 +118,7 @@ export class ScrollSpyService implements OnDestroy {
       });
   }
 
-  scrollTo(section: string) {
+  scrollTo(section: string): void {
     document.getElementById(section).scrollIntoView(true);
   }
 }
