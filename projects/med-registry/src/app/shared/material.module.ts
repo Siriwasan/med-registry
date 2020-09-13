@@ -46,7 +46,7 @@ import {
   MatDatepickerModule,
   MatMomentDateModule,
 } from 'dist/med-registry-library';
-// import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
 @NgModule({
   imports: [],
@@ -95,7 +95,7 @@ import {
     // MatTreeModule,
     // PortalModule,
     // ScrollingModule,
-    // NgxMatSelectSearchModule,
+    NgxMatSelectSearchModule,
   ],
 })
 export class MaterialModule {}

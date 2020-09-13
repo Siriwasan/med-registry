@@ -7,16 +7,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 // import { FabSpeedDialModule } from './modules/fab-speed-dial/fab-speed-dial.module';
-// import { NoSanitizePipe } from './pipes/no-sanitize.pipe';
-// import { ModalDialogComponent } from './components/modal-dialog/modal-dialog.component';
-// import { IsoDatePipe } from './pipes/iso-date.pipe';
+import { NoSanitizePipe } from './pipes/no-sanitize.pipe';
+import { ModalDialogComponent } from './components/modal-dialog/modal-dialog.component';
+import { IsoDatePipe } from './pipes/iso-date.pipe';
 
 @NgModule({
-  declarations: [
-    // ModalDialogComponent,
-    // NoSanitizePipe,
-    // IsoDatePipe
-  ],
+  declarations: [ModalDialogComponent, NoSanitizePipe, IsoDatePipe],
   imports: [
     CommonModule,
     MaterialModule,
@@ -30,9 +26,9 @@ import { RouterModule } from '@angular/router';
     MaterialModule,
     FlexLayoutModule,
     // FabSpeedDialModule,
-    // ModalDialogComponent,
-    // NoSanitizePipe,
-    // IsoDatePipe,
+    ModalDialogComponent,
+    NoSanitizePipe,
+    IsoDatePipe,
   ],
 })
 export class SharedModule {}

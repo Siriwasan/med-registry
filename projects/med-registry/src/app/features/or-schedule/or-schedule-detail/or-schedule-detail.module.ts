@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { SharedModule } from '../../../shared/shared.module';
+import { ScrollSpyModule } from '../../../../app/shared/modules/scroll-spy/scroll-spy.module';
+import { RegistryFormModule } from '../../../../app/shared/modules/registry-form/registry-form.module';
 
 import { OrScheduleDetailComponent } from './or-schedule-detail.component';
 
@@ -20,6 +22,8 @@ const routes: Routes = [
     SharedModule,
     RouterModule.forChild(routes),
     MedRegistryLibraryModule,
+    RegistryFormModule,
+    ScrollSpyModule,
   ],
 })
 export class OrScheduleDetailModule {}
