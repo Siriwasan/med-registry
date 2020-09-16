@@ -30,12 +30,15 @@ const routes: Routes = [
             (m) => m.OrScheduleModule
           ),
       },
-      // {
-      //   path: 'registry',
-      //   loadChildren: () => import('./features/registry/registry.module').then((m) => m.RegistryModule),
-      //   // canActivate: [AuthRoleGuard],
-      //   // data: { roles: Auth.menus.registry }
-      // },
+      {
+        path: 'registry',
+        loadChildren: () =>
+          import('./features/registry/registry.module').then(
+            (m) => m.RegistryModule
+          ),
+        // canActivate: [AuthRoleGuard],
+        // data: { roles: Auth.menus.registry }
+      },
 
       // { path: 'about', component: AboutComponent },
       // { path: 'auth', component: AuthComponent },

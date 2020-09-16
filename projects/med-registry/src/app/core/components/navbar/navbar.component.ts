@@ -29,8 +29,8 @@ export class NavbarComponent implements OnInit {
       }, 50);
     }
     document
-      .getElementById('acsd290')
-      .classList.toggle('active', url === '/registry/acsd/acsd290');
+      .getElementById('hfpmt2020')
+      .classList.toggle('active', url === '/registry/hfpmt/hfpmt2020');
   }
 
   toggleDarkTheme(checked: boolean): void {

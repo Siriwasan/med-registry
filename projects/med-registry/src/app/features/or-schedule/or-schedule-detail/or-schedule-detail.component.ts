@@ -1,18 +1,6 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  AfterViewInit,
-  AfterContentInit,
-} from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormGroupDirective,
-} from '@angular/forms';
+import { Component, OnInit, ViewChild, AfterContentInit } from '@angular/core';
+import { FormGroup, FormBuilder, FormGroupDirective } from '@angular/forms';
 
-import { OrScheduleDetailService } from './or-schedule-detail.service';
 import {
   OrScheduleDetailForm,
   OrScheduleDetailValidations,
@@ -40,22 +28,12 @@ export class OrScheduleDetailComponent implements OnInit, AfterContentInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    // private orScheduleDetailService: OrScheduleDetailService,
     private registryFormService: RegistryFormService
   ) {}
 
   ngOnInit(): void {}
 
   ngAfterContentInit(): void {
-    // this.orScheduleDetailService.initialize(
-    //   OrScheduleDetailDictionary,
-    //   this.fg,
-    //   this.fd,
-    //   OrScheduleDetailConditions,
-    //   OrScheduleDetailValidations,
-    //   this.visibility
-    // );
-
     this.fg = this.formBuilder.group(OrScheduleDetailForm);
 
     const sectionMembers: SectionMember[] = [
