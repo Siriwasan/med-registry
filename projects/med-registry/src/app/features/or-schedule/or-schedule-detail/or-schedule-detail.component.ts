@@ -13,6 +13,13 @@ import {
 import { OrScheduleDetailConditions } from './or-schedule-detail.condition';
 import { RegistryFormService } from '../../../shared/modules/registry-form/registry-form.service';
 
+import { Titles } from '../../../shared/data/title';
+import { Nationalities } from '../../../shared/data/nationality';
+import { Diagnosises } from '../../../shared/data/diagnosis';
+import { Procedures } from '../../../shared/data/procedure';
+import { CVTs } from '../../../shared/data/cvt';
+import { Hospitals } from '../../../shared/data/hospital';
+
 @Component({
   selector: 'app-or-schedule-detail',
   templateUrl: './or-schedule-detail.component.html',
@@ -23,6 +30,14 @@ export class OrScheduleDetailComponent implements OnInit, AfterContentInit {
   fg: FormGroup;
   controlService = this.registryFormService;
   visibility: FormVisibility = {};
+  gap = '20px';
+
+  titles = Titles;
+  nationalities = Nationalities;
+  diagnosises = Diagnosises;
+  procedures = Procedures;
+  cvts = CVTs;
+  hospitals = Hospitals;
 
   @ViewChild('fd') fd: FormGroupDirective;
 

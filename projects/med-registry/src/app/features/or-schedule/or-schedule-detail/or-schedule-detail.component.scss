@@ -1,1 +1,13 @@
 @import "../../../../../src/assets/styles/registry.scss";
+
+.form-area {
+  justify-content: center;
+  display: flex;
+}
+
+.form-container {
+  // border: 1px solid rgb(219, 219, 219);
+  // box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.24);
+  // margin: 20px;
+  max-width: 1000px;
+}

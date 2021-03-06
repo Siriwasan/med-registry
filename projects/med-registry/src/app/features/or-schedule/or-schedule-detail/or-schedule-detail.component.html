@@ -1,32 +1,149 @@
-<form [formGroup]="fg" #fd="ngForm">
-  <div class="reg-container">
+<div class="form-area">
+  <div class="form-container">
 
-    <reg-input controlName="firstName" placeholder="First name" [formGroup]="fg" type="text" fxFlex="1 0 200px"
-      [controlService]="controlService">
-    </reg-input>
+    <h1 class="registry-name" id="title">BPH OR Schedule</h1>
 
-    <reg-input controlName="lastName" placeholder="Last name" [formGroup]="fg" type="text" fxFlex="1 0 200px"
-      [controlService]="controlService">
-    </reg-input>
+    <section class="section-wrapper">
+      <!-- <div class="section-title">
+        Test
+      </div> -->
+      <div class="section-body">
+        <form [formGroup]="fg" #fd="ngForm">
+          <div fxLayout="row" fxLayout.lt-sm="column" [fxLayoutGap.gt-xs]="gap">
+            <reg-select-search controlName="Title" placeholder="Title" [formGroup]="fg" [choices]="titles"
+              fxFlex="1 0 200px" [controlService]="controlService"></reg-select-search>
 
-    <reg-select controlName="gender" placeholder="Gender" [formGroup]="fg" [choices]="['Male', 'Female']"
-      fxFlex="1 0 200px" [controlService]="controlService">
-    </reg-select>
+            <reg-input controlName="FirstName" placeholder="First name" [formGroup]="fg" type="text" fxFlex="1 0 200px"
+              [controlService]="controlService">
+            </reg-input>
 
-    <reg-datepicker *ngIf="visibility['DOB']" controlName="DOB" placeholder="Birth Date" [formGroup]="fg"
-      fxFlex="1 0 200px" [controlService]="controlService">
-      dd/mm/yyyy
-    </reg-datepicker>
+            <reg-input controlName="LastName" placeholder="Last name" [formGroup]="fg" type="text" fxFlex="1 0 200px"
+              [controlService]="controlService">
+            </reg-input>
 
-    Value: {{ fg.value | json }}
+            <reg-select controlName="Gender" placeholder="Gender" [formGroup]="fg" [choices]="['Male', 'Female']"
+              fxFlex="1 0 200px" [controlService]="controlService">
+            </reg-select>
+          </div>
+
+          <div fxLayout="row" fxLayout.lt-sm="column" [fxLayoutGap.gt-xs]="gap">
+            <reg-input controlName="SSN" placeholder="SSN" [formGroup]="fg" type="text" fxFlex="1 0 200px"
+              [controlService]="controlService">
+            </reg-input>
+
+            <reg-datepicker controlName="DOB" placeholder="Birth Date" [formGroup]="fg" fxFlex="1 0 200px"
+              [controlService]="controlService">
+              dd/mm/yyyy
+            </reg-datepicker>
+
+            <reg-input controlName="Age" placeholder="Age" [formGroup]="fg" type="text" fxFlex="1 0 200px"
+              [controlService]="controlService">
+            </reg-input>
+          </div>
+
+          <div fxLayout="row" fxLayout.lt-sm="column" [fxLayoutGap.gt-xs]="gap">
+            <reg-input controlName="Address" placeholder="Address" [formGroup]="fg" type="text" fxFlex="1 0 200px"
+              [controlService]="controlService">
+            </reg-input>
+
+            <reg-select-search controlName="Nationality" placeholder="Nationality" [formGroup]="fg"
+              [choices]="nationalities" fxFlex="1 0 200px" [controlService]="controlService"></reg-select-search>
+
+            <reg-input controlName="Phone" placeholder="Phone" [formGroup]="fg" type="text" fxFlex="1 0 200px"
+              [controlService]="controlService">
+            </reg-input>
+          </div>
+
+          <div fxLayout="row" fxLayout.lt-sm="column" [fxLayoutGap.gt-xs]="gap">
+            <reg-select controlName="ReferrerHospital" placeholder="ReferrerHospital" [formGroup]="fg"
+              [choices]="hospitals" fxFlex="1 0 200px" [controlService]="controlService"></reg-select>
+
+            <reg-select controlName="DestinationHospital" placeholder="DestinationHospital" [formGroup]="fg"
+              [choices]="hospitals" fxFlex="1 0 200px" [controlService]="controlService"></reg-select>
+          </div>
+
+          <div fxLayout="row" fxLayout.lt-sm="column" [fxLayoutGap.gt-xs]="gap">
+            <reg-select controlName="Diagnosis" placeholder="Diagnosis" [formGroup]="fg" [choices]="diagnosises"
+              fxFlex="1 0 200px" [controlService]="controlService"></reg-select>
+
+            <reg-select controlName="Procedure" placeholder="Procedure" [formGroup]="fg" [choices]="procedures"
+              fxFlex="1 0 200px" [controlService]="controlService"></reg-select>
+          </div>
+
+          <div fxLayout="row" fxLayout.lt-sm="column" [fxLayoutGap.gt-xs]="gap">
+            <reg-select controlName="Surgeon" placeholder="Surgeon" [formGroup]="fg" [choices]="cvts" fxFlex="1 0 200px"
+              [controlService]="controlService"></reg-select>
+
+            <reg-select controlName="Assistant" placeholder="Assistant" [formGroup]="fg" [choices]="cvts"
+              fxFlex="1 0 200px" [controlService]="controlService"></reg-select>
+          </div>
+
+          <div fxLayout="row" fxLayout.lt-sm="column" [fxLayoutGap.gt-xs]="gap">
+            <reg-textarea rows="4" controlName="Note" placeholder="Note" [formGroup]="fg" fxFlex="1 0 200px"
+              [controlService]="controlService">
+            </reg-textarea>
+          </div>
+
+
+
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br> <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br> <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          Value: {{ fg.value | json }}
+        </form>
+      </div>
+    </section>
   </div>
-</form>
-
-<!-- <mrl-med-registry-library></mrl-med-registry-library>
-
-<mat-form-field appearance="fill">
-  <mat-label>Choose a date</mat-label>
-  <input matInput [matDatepicker]="picker">
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-</mat-form-field> -->
+</div>
